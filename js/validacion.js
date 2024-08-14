@@ -1,3 +1,10 @@
+function showAlertSuccess() {
+    document.getElementById("alert-success").classList.add("show");
+}
+
+function showAlertError() {
+    document.getElementById("alert-danger").classList.add("show");
+}
 document.getElementById ('registroForm').addEventListener('sumbit', function (event) {
     let nombre = document.getElementById ('nombre').value;
     let email = document.getElementById ('email').value;
@@ -32,3 +39,11 @@ if (contrasena.lenght < 6){
     showAlertError("La contraseña debe tener al menos 6 caracteres.");
     return;
 }
+
+if (!aceptoTerminos){
+    showAlertError("Debe aceptar los terminos y condiciones.");
+    return;
+}
+
+//si pasa todas las validaciones
+showAlertSuccess("Datos guardados correctamente.");
