@@ -15,12 +15,19 @@ function showAlertSuccess() {
 function showAlertError() {
     document.getElementById("alert-danger").classList.add("show");
 
+}
+
+if (contrasena !== repetirContrasena) {
+    showAlertError("Las contraseñas no coinciden.");
+}
+
     // Validaciones
  if (nombre === "" || email === "" || contrasena === "" || repetirContrasena === "") {
  showAlertError("Todos los campos deben estar completos.");
  return;
+}
 
-}}//Validación de longitud de contraseña//
+//Validación de longitud de contraseña//
 if (contrasena.lenght < 6){
     showAlertError("La contraseña debe tener al menos 6 caracteres.");
     return;
