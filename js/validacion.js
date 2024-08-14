@@ -5,3 +5,8 @@ function showAlertSuccess() {
 function showAlertError() {
     document.getElementById("alert-danger").classList.add("show");
 }
+
+if (contrasena !== repetirContrasena) {
+    showAlertError("Las contraseñas no coinciden.");
+    return;
+}
