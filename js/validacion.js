@@ -20,4 +20,8 @@ function showAlertError() {
  showAlertError("Todos los campos deben estar completos.");
  return;
 
-}}
+}}//Validación de longitud de contraseña//
+if (contrasena.lenght < 6){
+    showAlertError("La contraseña debe tener al menos 6 caracteres.");
+    return;
+}
