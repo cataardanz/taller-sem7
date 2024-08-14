@@ -1,23 +1,13 @@
-function showAlertSuccess() {
-    document.getElementById("alert-success").classList.add("show");
-}
-
-function showAlertError() {
-    document.getElementById("alert-danger").classList.add("show");
-}
 document.getElementById ('registroForm').addEventListener('sumbit', function (event) {
     let nombre = document.getElementById ('nombre').value;
     let email = document.getElementById ('email').value;
     let contrasena = document.getElementById ('contrasena').value;
     let repetirContrasena = document.getElementById('repetirContrasena').value;
     let aceptoTerminos = document.getElementById ('aceptoterminos').checked;
-})
-
 
 function showAlertSuccess() {
     document.getElementById("alert-success").classList.add("show");
 }
-
 
 function showAlertError() {
     document.getElementById("alert-danger").classList.add("show");
@@ -47,3 +37,5 @@ if (!aceptoTerminos){
 
 //si pasa todas las validaciones
 showAlertSuccess("Datos guardados correctamente.");
+
+});
