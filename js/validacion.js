@@ -1,9 +1,9 @@
 document.getElementById ('registroForm').addEventListener('sumbit', function (event) {
-    let name = document.getElementById ('nombre').value;
+    let nombre = document.getElementById ('nombre').value;
     let email = document.getElementById ('email').value;
-    let password = document.getElementById ('contrasena').value;
-    let repeatpassword = document.getElementById('repetirContrasena').value;
-    let termsacept = document.getElementById ('aceptoterminos').checked;
+    let contrasena = document.getElementById ('contrasena').value;
+    let repetirContrasena = document.getElementById('repetirContrasena').value;
+    let aceptoTerminos = document.getElementById ('aceptoterminos').checked;
 })
 
 
