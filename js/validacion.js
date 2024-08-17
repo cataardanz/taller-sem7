@@ -1,9 +1,40 @@
-document.getElementById ('registroForm').addEventListener('sumbit', function (event) {
-    let nombre = document.getElementById ('nombre').value;
-    let email = document.getElementById ('email').value;
-    let contrasena = document.getElementById ('contrasena').value;
-    let repetirContrasena = document.getElementById('repetirContrasena').value;
-    let aceptoTerminos = document.getElementById ('aceptoterminos').checked;
+document.getElementById('regBtn').addEventListener('click', function() {
+
+    var nombre = document.getElementById('nombre').value.trim();
+    var apellido = document.getElementById('apellido').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var password1 = document.getElementById('password1').value;
+    var password2 = document.getElementById('password2').value;
+    var terminos = document.getElementById('terminos').checked;
+
+    
+    var alertSuccess = document.getElementById('alert-success');
+    var alertDanger = document.getElementById('alert-danger');
+    alertSuccess.classList.remove('show');
+    alertDanger.classList.remove('show');
+
+   if (!nombre || !apellido || !email || !password1 || !password2) {
+        showAlertError();
+        return;
+    }
+
+    if (password1.length < 6) {
+        showAlertError();
+        return;
+    }
+
+    if (password1 !== password2) {
+        showAlertError();
+        return;
+    }
+
+    if (!terminos) {
+        showAlertError();
+        return;
+        
+    }
+    showAlertSuccess();
+});
 
 function showAlertSuccess() {
     document.getElementById("alert-success").classList.add("show");
@@ -11,31 +42,4 @@ function showAlertSuccess() {
 
 function showAlertError() {
     document.getElementById("alert-danger").classList.add("show");
-
 }
-
-if (contrasena !== repetirContrasena) {
-    showAlertError("Las contraseñas no coinciden.");
-}
-
-    // Validaciones
- if (nombre === "" || email === "" || contrasena === "" || repetirContrasena === "") {
- showAlertError("Todos los campos deben estar completos.");
- return;
-}
-
-//Validación de longitud de contraseña//
-if (contrasena.lenght < 6){
-    showAlertError("La contraseña debe tener al menos 6 caracteres.");
-    return;
-}
-
-if (!aceptoTerminos){
-    showAlertError("Debe aceptar los terminos y condiciones.");
-    return;
-}
-
-//si pasa todas las validaciones
-showAlertSuccess("Datos guardados correctamente.");
-
-});
